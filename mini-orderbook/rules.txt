@@ -1,0 +1,25 @@
+Rules for matching a new order:
+
+1. The price of the trade would set to the 
+price of the order that is currently at the 
+book.
+
+2. An incomming buy matches a resting sell if 
+buy price >= sell price and an incomming sell 
+matches a resting buy if sell price <= buy 
+price.
+
+3. If several resting order cross, match the one 
+with the best price first: best price is the 
+highest price for buying order and lowest price 
+for selling orders. 
+
+4. For resting order with the same price priority 
+the tick time breaks the ties.
+
+Rules for when to stop matching:
+
+1. An incomming order keeps matching until 
+there are not more matches or the quantity becomes 
+0 and if the quantity is still non zero the order
+becomes a resting order.
